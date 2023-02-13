@@ -6,6 +6,9 @@ import React from "react";
 import Header from "./Components/Header";
 import NavBar from "./Components/NavBar";
 import HomePage from "./Components/HomePage";
+import RandomGame from "./Components/RandomGame";
+import Import from "./Components/Import";
+import CurrentGame from "./Components/CurrentGame";
 
 
 function App() {
@@ -16,6 +19,9 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
+        <Route path="/random" element={<RandomGame/>}/>
+        <Route path="/import" element={<Import/>}/>
+        <Route path="/:current" element={<CurrentGame/>}/>
       </Routes>
   </BrowserRouter>
   );
