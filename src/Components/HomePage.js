@@ -6,9 +6,6 @@ const data = require('../assets/data');
 const HomePage = () => {
     return (
 
-        // {tweetArr.map((tweet) => {
-        //     return (<Tweet tweetData = {tweet}/>)
-        //   })}
        <Wrapper>
           {data.games.map((game) => {
                   return (
@@ -27,6 +24,7 @@ const HomePage = () => {
 };
 
 const Wrapper = styled.div`
+
 display:flex;
 flex-wrap:wrap;
 

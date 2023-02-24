@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+const SideBar = () => {
     return (
        <Wrapper>
            <StyeldLink to="/">All games</StyeldLink>
@@ -14,12 +14,22 @@ const NavBar = () => {
 
 const  Wrapper = styled.div`
     display: flex;
-    align-items:center;
-    justify-content:space-around;
+    flex-direction:column;
+    width:200px;
+
 `;
 
 const StyeldLink = styled(Link)`
 text-decoration:none;
+padding: 5px 0px 5px 5px;
+font-size: 24px;
+color: white;
+width: 200px;
+cursor: pointer;
+:hover {
+    background-color:black;
+}
+
 `;
 
-export default NavBar;
+export default SideBar;
