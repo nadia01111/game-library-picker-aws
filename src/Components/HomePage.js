@@ -1,19 +1,25 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import CurrentGame from "./CurrentGame";
-const data = require('../assets/data');
+// const data = require('../assets/data');
+import { AllGamesContext } from "./AllGameContext";
 
 const HomePage = () => {
+  const {games, loading} = useContext(AllGamesContext);
+  // loading? console.log(games):console.log("first");
+ 
     return (
 
        <Wrapper>
-          {data.games.map((game) => {
+          {games?.map((game) => {
                   return (
                   <GameWrapper to={CurrentGame}>
-                    <img src={game.thumbnail}/>
-                    <div>{game.title}</div> 
-                    <div>Service: Steam</div>
-                    <div>Played:NO</div>
+                    <Img src={game.Picture}/>
+                    <div>{game.Title}</div> 
+                    <div>Source: {game.Source}</div>
+                    <div>Played: {game.Played?<span>yes</span>:<span>no</span>}</div>
+
                   </GameWrapper>
                       
                       )
@@ -44,6 +50,11 @@ float: left;
 :hover {
   box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
+`;
+
+const Img = styled.img`
+width:20vw;
+height:
 `;
 
 export default HomePage;

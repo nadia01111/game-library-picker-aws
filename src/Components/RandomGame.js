@@ -1,23 +1,32 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import GameDescription from "./GameDescription";
 
 const RandomGame = () => {
     const [status, setStatus] = useState("loading");
     const [gameObj, setGameObj] = useState(null);
+    const [gameDescription, setGameDescription] = useState(null);
+
+
     useEffect(()=> {
         fetch("https://tranquil-brook-78066.herokuapp.com/random")
             .then((res)=>res.json())
             .then((data) => {
                 console.log(data);
                 setStatus("loaded");
-                setGameObj(data)
+                setGameObj(data);
+                setGameDescription(data.Description)
             })
             .catch((err)=> {
                 setStatus("error");
                 throw new Error(err.stack);
             });
+         
     },[])
+    
+   
+
     if (status ==="loading") {return <div>loading</div>}
     return (
     
@@ -25,9 +34,7 @@ const RandomGame = () => {
            <H2>Did you play this game?</H2>
            <Img src={gameObj.Picture}/>
            <H3>{gameObj.Title}</H3>
-           <Description>{gameObj.Description}</Description>
-           {/* <Played>
-               {gameObj.Played?<Btn>Played</Btn>:<Btn>Want to play</Btn>}</Played> */}
+           <GameDescription text={gameDescription}/>
             <BtnWrap> 
                 <Btn>YES</Btn>
                 <Btn>NO</Btn>
@@ -62,6 +69,8 @@ width: 30vw;
 const Description = styled.div`
 height: 40px;
 `;
+
+
 const Played = styled.div``;
 const Source = styled.div``;
 const Btn = styled.button`
