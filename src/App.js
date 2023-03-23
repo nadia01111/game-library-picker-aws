@@ -4,12 +4,12 @@ import React from "react";
 
 import Header from "./Components/Header";
 import SideBar from "./Components/SideBar";
-import HomePage from "./Components/HomePage";
+import HomePage from "./Components/AllGamesPage";
 import RandomGame from "./Components/RandomGame";
 import Import from "./Components/Import";
 import CurrentGame from "./Components/CurrentGame";
 import styled from "styled-components";
-import Page from "./Components/Page";
+import Page from "./Components/WelcomePage";
 
 function App() {
   

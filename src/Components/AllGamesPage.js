@@ -7,7 +7,7 @@ import 'overlayscrollbars/overlayscrollbars.css';
 import { OverlayScrollbars } from 'overlayscrollbars';
 import { useMatchMedia } from "./useMatchMedia";
 
-const HomePage = () => {
+const AllGamesPage = () => {
   const {games, loading} = useContext(AllGamesContext);
 const {} = useMatchMedia;
  
@@ -42,11 +42,11 @@ margin: 5px;
 cursor: pointer;
 padding:10px;
 text-decoration:none;
-color:black;
+color:white;
 transition: box-shadow .3s;
 border-radius:10px;
-border: 1px solid #ccc;
-background: #fff;
+border: 1px solid gray;
+background: black;
 float: left;
 
 :hover {
@@ -59,4 +59,4 @@ width:20vw;
 height:
 `;
 
-export default HomePage;
+export default AllGamesPage;
