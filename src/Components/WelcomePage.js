@@ -7,7 +7,7 @@ const WelcomePage = () => {
     return (
        <Wrapper>
            <SearchBar/>
-           <H2>Welcome to <span>UserName</span> game catalog!</H2>
+           <H2>Welcome to <span>User Name</span> game catalog!</H2>
            <Text><LoremIpsum div={1} /></Text>
            <StartBtn to="/random">Get started</StartBtn>
        </Wrapper>
