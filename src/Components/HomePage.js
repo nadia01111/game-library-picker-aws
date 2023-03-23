@@ -2,12 +2,14 @@ import { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import CurrentGame from "./CurrentGame";
-// const data = require('../assets/data');
 import { AllGamesContext } from "./AllGameContext";
+import 'overlayscrollbars/overlayscrollbars.css';
+import { OverlayScrollbars } from 'overlayscrollbars';
+import { useMatchMedia } from "./useMatchMedia";
 
 const HomePage = () => {
   const {games, loading} = useContext(AllGamesContext);
-  // loading? console.log(games):console.log("first");
+const {} = useMatchMedia;
  
     return (
 

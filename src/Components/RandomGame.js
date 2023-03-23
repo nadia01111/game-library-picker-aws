@@ -52,8 +52,9 @@ padding: 20px 30px 20px 30px;
 display: flex;
 flex-direction:column;
 align-items:center;
-background-color:#31191A;
-height:600px;
+background-color:black;
+border-radius:5%;
+/* height:600px; */
 /* height: 60vh; */
 width: 60vw;
 border-radius:5px;

@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
     return (
        <Wrapper>
-           <StyeldLink to="/">All games</StyeldLink>
+           <StyeldLink to="/">Page</StyeldLink>
+           <StyeldLink to="/all">All games</StyeldLink>
            <StyeldLink to="/random">Random game</StyeldLink>
            <StyeldLink to="/current">Current game</StyeldLink>
            <StyeldLink to="/import">Import</StyeldLink>
