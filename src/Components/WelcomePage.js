@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { LoremIpsum } from 'react-lorem-ipsum';
 import { Link, redirect } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const WelcomePage = () => {
     return (
        <Wrapper>
+           <SearchBar/>
            <H2>Welcome to <span>GanGral137</span> game catalog!</H2>
            <Text><LoremIpsum div={1} /></Text>
            <StartBtn to="/random">Get started</StartBtn>
