@@ -7,7 +7,6 @@ const SideBar = () => {
            <StyeldLink to="/">Page</StyeldLink>
            <StyeldLink to="/all">All games</StyeldLink>
            <StyeldLink to="/random">Random game</StyeldLink>
-           <StyeldLink to="/current">Current game</StyeldLink>
            <StyeldLink to="/import">Import</StyeldLink>
        </Wrapper>
     )

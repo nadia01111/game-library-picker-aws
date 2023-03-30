@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { AllGamesContext } from "./AllGameContext";
-import { useNavigate } from "react-router-dom";
+import { useate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { MdClear } from "react-icons/md";
 import styled from "styled-components";
 
 
 const SearchBar = () => {
+
 const games = useContext(AllGamesContext);
 console.log(games);
 const [value, setValue] = useState("");
@@ -15,14 +16,15 @@ const [search,setSearch] = useState(false);
 const matchedSuggestions = games?.games?.filter((game) => {
     return game.Title.toLowerCase().includes(value.toLowerCase())
 });
+console.log(matchedSuggestions);
 
 const showSearchResults = (ev) => {
     ev.preventDefault();
     setSearch(!search)
-    navigate(`/${value}`)
+    // navigate(`/${value}`)
 };
 
-let navigate = useNavigate();
+// let navigate = useNavigate();
 
 return (
 
@@ -42,8 +44,26 @@ return (
     <Input 
     type="submit"
     value="Search"/>
+<MdClear onClick={() => {setValue("")}}/>
 
-<MdClear onClick={() => setValue("")}/>
+{value?.length>=2 && matchedSuggestions?.length>0 ?
+<Ul>{
+    !search && matchedSuggestions.map((suggestion) =>{
+        return ( <Li
+            key={suggestion._id}
+            // onClick={() => {navigate(`/${suggestion.title}`)}};
+            // setValue(suggestion.Title)
+            >
+
+            {suggestion.Title}
+        </Li>
+
+        )
+    })
+    }</Ul> :
+null
+}
+{/* <MdClear onClick={() => setValue("")}/>
     
     {value?.length>=2 && matchedSuggestions?.length>0 ?
     
@@ -56,7 +76,7 @@ return (
               setSearch(!search)
               }}>{suggestion.name}</Li>
           )
-    })} </Ul>:null}
+    })} </Ul>:null} */}
 
     </Form>
 </Wrap>

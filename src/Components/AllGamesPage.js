@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import CurrentGame from "./CurrentGame";
+import Game from "./Game";
 import { AllGamesContext } from "./AllGameContext";
 import 'overlayscrollbars/overlayscrollbars.css';
 import { OverlayScrollbars } from 'overlayscrollbars';
 import { useMatchMedia } from "./useMatchMedia";
+// import Img from "./Img";
 
 const AllGamesPage = () => {
   const {games, loading} = useContext(AllGamesContext);
@@ -16,12 +17,25 @@ const {} = useMatchMedia;
        <Wrapper>
           {games?.map((game) => {
                   return (
-                  <GameWrapper to={CurrentGame}>
-                    <Img src={game.Picture}/>
-                    <div>{game.Title}</div> 
-                    <div>Source: {game.Source}</div>
-                    <div>Played: {game.Played?<span>yes</span>:<span>no</span>}</div>
-
+                    
+                  <GameWrapper to={`https://tranquil-brook-78066.herokuapp.com/game/${game.Id}`}>
+                    <ImgWrap style={{
+                      backgroundImage: `url(${game.Picture})`,
+                      backgroundSize: 'cover',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center',
+                      width: '100%'
+                    }}
+                    
+                    >
+          
+                      {/* <Img src={game.Picture}/> */}
+                    </ImgWrap>
+                      <Wrap>
+                      <GameTitle>{game.Title}</GameTitle>
+                      <div>Source: {game.Source}</div>
+                      <div>Played: {game.Played?<span>yes</span>:<span>no</span>}</div>
+                    </Wrap>
                   </GameWrapper>
                       
                       )
@@ -54,9 +68,26 @@ float: left;
 }
 `;
 
-const Img = styled.img`
-width:20vw;
-height:
+const Wrap = styled.div`
+padding:2px;
+width: 20vw;
+
 `;
+
+const GameTitle = styled.div`
+overflow-wrap: break-word;
+`;
+
+
+const ImgWrap = styled.div`
+width: 20vw;
+height: 15vh;
+
+`;
+
+// const Img = styled.img`
+// width:100%;
+// height: 100%;
+// `;
 
 export default AllGamesPage;

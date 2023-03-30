@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
     return (
        <Wrapper>
       <Name to="/"><h1>Random game picker</h1></Name>
+      {/* <SearchBar/> */}
        </Wrapper>
     )
 };

@@ -7,6 +7,7 @@ import {AllGamesContextProvider} from './Components/AllGameContext.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    
  <AllGamesContextProvider>
 
      <App />
