@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import GameDescription from "./GameDescription";
+import GameTextDescription from "./GameTextDescription";
 
 const GameDetails = ({gameData,message}) => {
 console.log(gameData);
@@ -10,7 +10,7 @@ console.log(message);
            <H2>Did you play this game?</H2>
            <Img src={gameData.Picture}/>
            <H3>{gameData.Title}</H3>
-           <GameDescription text={gameData.Description}/>
+           <GameTextDescription text={gameData.Description}/>
             <BtnWrap> 
                 <Btn>YES</Btn>
                 <Btn>NO</Btn>

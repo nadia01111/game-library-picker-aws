@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {useState } from "react";
 
-const GameDescription = ({text}) =>{
+const GameTextDescription = ({text}) =>{
     const [isShown, setIsShown] = useState(true);
 
     const toggleShowMore = () => setIsShown(!isShown);
@@ -13,7 +13,7 @@ return (
            <MoreBtn onClick={toggleShowMore}>...more</MoreBtn>
            </>:
            <>
-           <Text dangerouslySetInnerHTML={ {__html: text} } />
+           <Text onClick={toggleShowMore} dangerouslySetInnerHTML={ {__html: text} } />
            <MoreBtn onClick={toggleShowMore}>...less</MoreBtn>
            </>
            
@@ -40,4 +40,4 @@ const MoreBtn = styled.span`
 border: none; */
 /* color: white; */
 `;
-export default GameDescription; 
+export default GameTextDescription; 

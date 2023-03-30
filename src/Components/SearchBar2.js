@@ -25,19 +25,7 @@ const SearchBar2= () => {
             </SearchBar>
           );
     }
-   
-    return (
-        <SearchBar>
-            <div>{titles}</div>
-          <SearchTypeahead
-            id="search-bar"
-            options={titles}
-            labelKey="name"
-            placeholder="Search"
-        
-          />
-        </SearchBar>
-      );
+
 
 };
 
