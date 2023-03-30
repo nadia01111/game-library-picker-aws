@@ -17,8 +17,9 @@ const {} = useMatchMedia;
        <Wrapper>
           {games?.map((game) => {
                   return (
-                    
-                  <GameWrapper to={`https://tranquil-brook-78066.herokuapp.com/game/${game.Id}`}>
+                    // to={`/item/${item._id}`}>
+                    // /game/:gameId
+                  <GameWrapper to={`/game/${game.Id}`}>
                     <ImgWrap style={{
                       backgroundImage: `url(${game.Picture})`,
                       backgroundSize: 'cover',

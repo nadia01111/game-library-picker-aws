@@ -6,16 +6,16 @@ import { useParams } from "react-router-dom";
 const Game =()=> {
 
 const {gameId} = useParams();
-const [gameData, setIGameData] = useState({});
+const [gameData, setIGameData] = useState("");
 
 useEffect (() => {
     fetch(`https://tranquil-brook-78066.herokuapp.com/game/${gameId}`)
     .then((res) =>res.json())
     .then ((data) => {
         console.log(data);
-        setIGameData(data.data)
+        setIGameData(data)
     })
-}, [gameId]);
+}, []);
 
 }
 export default Game;
