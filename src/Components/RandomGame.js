@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import GameDescription from "./GameDescription";
+import GameDetails from "./GameDetails";
 
 const RandomGame = () => {
     const [status, setStatus] = useState("loading");
     const [gameObj, setGameObj] = useState(null);
+    const [gameData, setGameData] = useState(null);
     const [gameDescription, setGameDescription] = useState(null);
 
 
@@ -15,8 +15,8 @@ const RandomGame = () => {
             .then((data) => {
                 console.log(data);
                 setStatus("loaded");
-                setGameObj(data);
-                setGameDescription(data.Description)
+                setGameData(data);
+    
             })
             .catch((err)=> {
                 setStatus("error");
@@ -29,20 +29,7 @@ const RandomGame = () => {
 
     if (status ==="loading") {return <div>loading</div>}
     return (
-    
-       <Wrapper>
-           <H2>Did you play this game?</H2>
-           <Img src={gameObj.Picture}/>
-           <H3>{gameObj.Title}</H3>
-           <GameDescription text={gameDescription}/>
-            <BtnWrap> 
-                <Btn>YES</Btn>
-                <Btn>NO</Btn>
-            </BtnWrap>
-              
-           <Source>Source:  {gameObj.Source}</Source>
-       </Wrapper>
- 
+    <GameDetails gameData = {gameData}/>
     )
 };
 

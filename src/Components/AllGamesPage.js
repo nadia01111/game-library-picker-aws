@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Game from "./Game";
 import { AllGamesContext } from "./AllGameContext";
 import 'overlayscrollbars/overlayscrollbars.css';
 import { OverlayScrollbars } from 'overlayscrollbars';
