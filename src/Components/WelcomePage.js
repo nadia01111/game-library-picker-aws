@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 const WelcomePage = () => {
     return (
        <Wrapper>
-           <SearchBar/>
+           {/* <SearchBar/> */}
            <H2>Welcome to <span>User Name$$$</span> game catalog!</H2>
            <Text><LoremIpsum div={1} /></Text>
            <StartBtn to="/random">Get started</StartBtn>
@@ -24,7 +24,7 @@ span {
 `;
 const Text = styled.div`
 color: white;
-width: 40%;
+width: 60%;
 text-align:justify; 
 margin-bottom:50px;
 `;

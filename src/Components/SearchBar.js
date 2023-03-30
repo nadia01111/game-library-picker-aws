@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { AllGamesContext } from "./AllGameContext";
-import { useate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import { MdClear } from "react-icons/md";
 import styled from "styled-components";
@@ -9,7 +8,6 @@ import styled from "styled-components";
 const SearchBar = () => {
 
 const games = useContext(AllGamesContext);
-console.log(games);
 const [value, setValue] = useState("");
 const [search,setSearch] = useState(false);
 
