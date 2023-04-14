@@ -11,7 +11,6 @@ useEffect (() => {
     fetch(`https://tranquil-brook-78066.herokuapp.com/game/${gameId}`)
     .then((res) =>res.json())
     .then ((data) => {
-        console.log(data);
         setGameData(data);
         setStatus("loaded");
     })
@@ -19,8 +18,9 @@ useEffect (() => {
 
 if (status ==="loading") {return <div>loading</div>}
     return (
-    <GameDetails gameData = {gameData}/>
+    <GameDetails gameData={gameData} id={gameId}/>
     )
+
 };
 
 export default GameID;

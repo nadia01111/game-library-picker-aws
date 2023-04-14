@@ -18,7 +18,9 @@ const {} = useMatchMedia;
                   return (
                     // to={`/item/${item._id}`}>
                     // /game/:gameId
-                  <GameWrapper to={`/game/${game.Id}`}>
+                  <GameWrapper 
+                  key={game.Id}
+                  to={`/game/${game.Id}`}>
                     <ImgWrap style={{
                       backgroundImage: `url(${game.Picture})`,
                       backgroundSize: 'cover',

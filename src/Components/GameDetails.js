@@ -1,9 +1,41 @@
 import styled from "styled-components";
-import GameTextDescription from "./GameTextDescription";
 
-const GameDetails = ({gameData,message}) => {
-console.log(gameData);
-console.log(message);
+import GameTextDescription from "./GameTextDescription";
+import { useState, useEffect } from "react";
+
+const GameDetails = ({gameData, id}) => {
+
+
+    const [updatedItem, setUpdatedItem] = useState(null);
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const response = await fetch(`/updPlayed/${id}`);
+    //         const data = await response.json();
+    //         setUpdatedItem(data);
+    //         console.log(data)
+    //     };
+    //     fetchData();
+    // }, [id]);
+
+    console.log(id);
+    console.log(gameData);
+
+      const handleSubmit = async event => {
+
+        event.preventDefault();
+        console.log("first");
+        const response = await fetch(`/updPlayed/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ Played:true })
+        });
+        console.log("ds");
+        const data = await response.json();
+        setUpdatedItem(data);
+    
+      };
+
     return (
     
        <Wrapper>
@@ -12,7 +44,7 @@ console.log(message);
            <H3>{gameData.Title}</H3>
            <GameTextDescription text={gameData.Description}/>
             <BtnWrap> 
-                <Btn>YES</Btn>
+                <Btn onClick={handleSubmit}>YES</Btn>
                 <Btn>NO</Btn>
             </BtnWrap>
               
