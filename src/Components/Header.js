@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import SearchBar2 from "./SearchBar2";
 import SearchBar from "./SearchBar";
 
 const Header = () => {
@@ -8,7 +7,6 @@ const Header = () => {
        <Wrapper>
       <Name to="/"><h1>Random game picker</h1></Name>
       <SearchBar/>
-      {/* <SearchBar2/> */}
        </Wrapper>
     )
 };

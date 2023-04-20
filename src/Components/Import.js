@@ -16,17 +16,19 @@ const Import = () => {
         event.preventDefault();
         const formData = new FormData();
 		formData.append('File', selectedFile);
+        const timeout = 120000; //2 min 
 
         fetch(
-			'https://tranquil-brook-78066.herokuapp.com/testhtml',
+			'https://tranquil-brook-78066.herokuapp.com/importhtml/EGLibrary ',
 			{
 				method: 'POST',
 				body: formData,
+                timeout: timeout // Set the timeout value in the options
 			}
 		)
 			.then((response) => response.json())
 			.then((result) => {
-                console.log(formData);
+                // console.log(formData);
 				console.log('Success:', result);
 			})
 			.catch((error) => {
@@ -35,6 +37,8 @@ const Import = () => {
         
       };
     
+
+
   
       return (
           <Wrapper>

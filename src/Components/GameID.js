@@ -14,7 +14,10 @@ useEffect (() => {
         setGameData(data);
         setStatus("loaded");
     })
-}, []);
+}, [gameId]);
+
+
+
 
 if (status ==="loading") {return <div>loading</div>}
     return (

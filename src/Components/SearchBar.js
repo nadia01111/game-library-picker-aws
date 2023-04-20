@@ -3,6 +3,7 @@ import { AllGamesContext } from "./AllGameContext";
 import { FiSearch } from "react-icons/fi";
 import { MdClear } from "react-icons/md";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 
 const SearchBar = () => {
@@ -14,15 +15,15 @@ const [search,setSearch] = useState(false);
 const matchedSuggestions = games?.games?.filter((game) => {
     return game.Title.toLowerCase().includes(value.toLowerCase())
 });
-console.log(matchedSuggestions);
+console.log("matchedSuggestions", matchedSuggestions);
 
 const showSearchResults = (ev) => {
     ev.preventDefault();
     setSearch(!search)
     // navigate(`/${value}`)
 };
+let navigate = useNavigate();
 
-// let navigate = useNavigate();
 
 return (
 
@@ -47,35 +48,18 @@ return (
 {value?.length>=2 && matchedSuggestions?.length>0 ?
 <Ul>{
     !search && matchedSuggestions.map((suggestion) =>{
-        return ( <Li
-            key={suggestion._id}
-            // onClick={() => {navigate(`/${suggestion.title}`)}};
-            // setValue(suggestion.Title)
-            >
 
-            {suggestion.Title}
-        </Li>
+        return (<Li 
+            key={suggestion.Id} 
+            onClick={()=>{navigate(`/game/${suggestion.Id}`); 
+            setSearch(!search)
+            setValue(""); 
+            }}>{suggestion.Title}</Li>)
 
-        )
+        
     })
-    }</Ul> :
-null
+    }</Ul>:null
 }
-{/* <MdClear onClick={() => setValue("")}/>
-    
-    {value?.length>=2 && matchedSuggestions?.length>0 ?
-    
-    <Ul> { 
-        !search && matchedSuggestions.slice(0,15).map((suggestion) => {
-            return (<Li 
-              key={suggestion._id} 
-              onClick={()=>{navigate(`/item/${suggestion._id}`); 
-              setValue(suggestion.name); 
-              setSearch(!search)
-              }}>{suggestion.name}</Li>
-          )
-    })} </Ul>:null} */}
-
     </Form>
 </Wrap>
 )
@@ -125,18 +109,22 @@ background-color: transparent;
 }
 `;
 const Ul = styled.ul`
+padding: 0px;
 z-index: 2;
 position: absolute;
 top:60px;
-background-color: var(--color-navbar-beige);
+background-color: gray;
+width: inherit;
+
 
 `;
 
 const Li = styled.li`
 list-style-type:none;
+width: inherit;
 :hover {
-    background-color:var( --color-green);
-    color: var(--color-navbar-beige);;
+    background-color:#000000;
+    /* color: #000000;; */
    
 }`;
 
