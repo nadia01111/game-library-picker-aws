@@ -26,7 +26,7 @@ const Import = () => {
                 timeout: timeout // Set the timeout value in the options
 			}
 		)
-			.then((response) => response.json())
+			.then((response) => response.text())
 			.then((result) => {
                 // console.log(formData);
 				console.log('Success:', result);

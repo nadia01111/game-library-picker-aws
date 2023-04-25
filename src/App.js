@@ -7,6 +7,7 @@ import SideBar from "./Components/SideBar";
 import HomePage from "./Components/AllGamesPage";
 import RandomGame from "./Components/RandomGame";
 import Import from "./Components/Import";
+import Import2 from "./Components/Import2";
 import styled from "styled-components";
 import Page from "./Components/WelcomePage";
 import GameID from "./Components/GameID";
@@ -23,7 +24,7 @@ function App() {
         <Route path="/" element={<Page/>}/>
         <Route path="/all" element={<HomePage/>}/>
         <Route path="/random" element={<RandomGame/>}/>
-        <Route path="/import" element={<Import/>}/>
+        <Route path="/import" element={<Import2/>}/>
         <Route path="/game/:gameId" element={<GameID />} />
 
       </Routes>
