@@ -8,7 +8,7 @@ import SideBar from "./Components/SideBar";
 import HomePage from "./Components/AllGamesPage";
 import RandomGame from "./Components/RandomGame";
 import Import from "./Components/Import";
-import Import2 from "./Components/Import2";
+import Import2 from "./Components/Import";
 import styled from "styled-components";
 import Page from "./Components/WelcomePage";
 import GameID from "./Components/GameID";
