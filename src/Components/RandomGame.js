@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import GameDetails from "./GameDetails";
 
-const RandomGame = () => {
+const RandomGame = ({ key }) => {
     const [status, setStatus] = useState("loading");
     const [gameObj, setGameObj] = useState(null);
     const [gameData, setGameData] = useState(null);
@@ -29,7 +29,7 @@ const RandomGame = () => {
 
     if (status ==="loading") {return <div>loading</div>}
     return (
-    <GameDetails gameData = {gameData}/>
+    <GameDetails key={key} gameData = {gameData}/>
     )
 };
 

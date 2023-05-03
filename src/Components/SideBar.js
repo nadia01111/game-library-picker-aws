@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const SideBar = () => {
+const SideBar = ({ onRandomGameClick }) => {
     return (
        <Wrapper>
            <StyeldLink to="/">Home</StyeldLink>
            <StyeldLink to="/all">All games</StyeldLink>
-           <StyeldLink to="/random">Random game</StyeldLink>
+           <StyeldLink onClick={onRandomGameClick} to="/random">Random game</StyeldLink>
            <StyeldLink to="/import">Import</StyeldLink>
        </Wrapper>
     )

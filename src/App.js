@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 
 import React from "react";
 
@@ -13,17 +14,21 @@ import Page from "./Components/WelcomePage";
 import GameID from "./Components/GameID";
 
 function App() {
-  
+  const [randomGameKey, setRandomGameKey] = useState(0);
+
+  const handleRandomGameClick = () => {
+    setRandomGameKey(prevKey => prevKey + 1);
+  }
 
   return (
     <BrowserRouter>
       <Header />
   <Wrapper>
-      <SideBar/>
+      <SideBar onRandomGameClick={handleRandomGameClick}/>
       <Routes>
         <Route path="/" element={<Page/>}/>
         <Route path="/all" element={<HomePage/>}/>
-        <Route path="/random" element={<RandomGame/>}/>
+        <Route path="/random" element={<RandomGame key={randomGameKey}/>}/>
         <Route path="/import" element={<Import2/>}/>
         <Route path="/game/:gameId" element={<GameID />} />
 
